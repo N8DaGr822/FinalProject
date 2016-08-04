@@ -1,0 +1,192 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+/*Ugly Custom CSS*/
+/*.container {
+    width: 90%;
+    color: white;
+}
+
+.row {
+    color: white;
+}
+
+.table {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+#boxes {
+    display: block;
+    margin: 20px;
+    padding: 15px;
+    background-color: rebeccapurple;
+    width: 25%;
+    border: solid 2px white;
+    border-radius: 25px;
+    text-align: center;
+    height: 180px;
+}
+
+    #boxes div {
+        padding: 3px;
+        padding-top: 0;
+    }
+
+hr {
+    width: 90%;
+}
+
+.container body-content {
+    display: inline-block;
+}
+
+.header {
+    border: solid 2px white;
+    border-radius: 15px;
+    background-color: blue;
+    margin-top: 0;
+}
+textarea{
+    resize:none;
+    min-height:10em;
+}
+#detailsContainer{
+    width:60%;
+    margin:auto;
+    background-color:gray;
+    color:white;
+    padding:1em;
+    border-radius:1em;
+    box-shadow:3px 3px black;
+}
+#detailsHeaderLeft{
+    width:50%;
+    float:left;
+}
+#detailsHeaderRight{
+    margin-left:52%;
+    text-align:right;
+    font-size:1.5em;
+}
+#bodyLeft {
+    width:40%;
+    float:left;
+}
+#bodyRight{
+    margin-top:1em;
+}
+#footerLeft{
+    width:50%;
+    float:left;
+}
+#footerRight{
+    margin-left:52%;
+    text-align:right;
+}
+#footerLeft a, #footerRight a{
+    color:white;
+    text-decoration:underline;
+}
+#footerLeft a:hover, #footerRight a:hover{
+    color:purple;
+}
+.page-header{
+    text-align:center;
+}*/
+
+/*Better Custome CSS*/
+
+textarea{
+    resize:none;
+    min-height:10em;
+}
+#detailsContainer{
+    width:60%;
+    margin:auto;
+    background-color:gray;
+    color:white;
+    padding:1em;
+    border-radius:1em;
+    box-shadow:3px 3px black;
+}
+#detailsHeaderLeft{
+    width:50%;
+    float:left;
+}
+#detailsHeaderRight{
+    margin-left:52%;
+    text-align:right;
+    font-size:1.5em;
+}
+#bodyLeft {
+    width:40%;
+    float:left;
+}
+#bodyRight{
+    margin-top:1em;
+}
+#footerLeft{
+    width:50%;
+    float:left;
+}
+#footerRight{
+    margin-left:52%;
+    text-align:right;
+}
+#footerLeft a, #footerRight a{
+    color:white;
+    text-decoration:underline;
+}
+#footerLeft a:hover, #footerRight a:hover{
+    color:purple;
+}

@@ -1,0 +1,82 @@
+﻿@model FinalProject.Data.EF.TSTTicket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TSTTicket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResolutionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResolutionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSTEmployee.Fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSTEmployee.Fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSTEmployee1.Fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSTEmployee1.Fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSTTicketPriority.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSTTicketPriority.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TSTTicketStatus.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TSTTicketStatus.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
