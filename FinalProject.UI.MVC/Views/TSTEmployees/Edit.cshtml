@@ -4,15 +4,21 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 style="text-align:center;">Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(
+    "Edit","TSTEmployees",FormMethod.Post,
+    new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+    @Html.HiddenFor(model => model.UserID)
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.Image)
+
+
     <div class="form-horizontal">
-        <h4>TSTEmployee</h4>
+        <h4 style="text-align:center;">@Html.DisplayNameFor(model => model.Fname)</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -100,7 +106,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HireDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HireDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.HireDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.HireDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -108,7 +114,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SeparationDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SeparationDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.SeparationDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.SeparationDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -134,8 +140,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                <p>Current Image: <img src="~/Images/EmployeeImages/@Model.Image" alt="" style="height:100px; width:100px;" /></p>
+                @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
+                <p>New Employee Image: <input type="file" name="empImage" /></p>
+
             </div>
         </div>
 
@@ -173,14 +182,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-danger" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div style="text-align:center;">
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>
 
 @section Scripts {

@@ -4,11 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2 style="text-align:center;">Tickets</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-danger" })
+    </p>
 <table class="table">
     <tr>
         <th>
@@ -24,16 +23,16 @@
             @Html.DisplayNameFor(model => model.Subject)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TSTEmployee.Fname)
+            Submited By
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TSTEmployee1.Fname)
+            Tech
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TSTTicketPriority.Name)
+            Priority
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TSTTicketStatus.Name)
+            Status
         </th>
         <th></th>
     </tr>
@@ -65,9 +64,18 @@
             @Html.DisplayFor(modelItem => item.TSTTicketStatus.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Tech"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" })
+
+            }
+            <br />
+            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-success" }) 
+            <br/>
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            }
         </td>
     </tr>
 }

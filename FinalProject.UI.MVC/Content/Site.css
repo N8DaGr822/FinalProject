@@ -1,0 +1,109 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*------------------------------------Custom CSS------------------------------------*/
+
+.container body-content{
+    color:white;
+    margin-left:225px;
+    width:80%;
+}
+.col-md-offset-2{
+    margin-left:18.666667%;
+}
+body{
+    color:white;
+}
+footer{
+    text-align:center;    
+}
+.jumbotron{
+    color:black;
+}
+#DeptBody{
+    /*background-color:navy;*/
+    padding:2em;
+
+}
+#deptcontainer{
+    padding:1em;
+    display:inline-block;
+}
+#pageheader{
+    text-align:center;
+}
+#BodyInfo{
+        background-color:#37298E;
+    padding:2em;
+    border:solid 2px white;
+    border-radius:25px;
+
+}
+#deptheader{
+    text-align:center;
+    background-color:#6E135D;
+    border-radius:12px;
+    padding:1em;
+}
+#deptcontainerbody{
+    text-align:center;
+}
+#toggleswitch{
+    color:white;
+    
+}
+legend{
+    color:white;
+}
+textarea{
+    resize:none;
+    height:100px;
+    width:400px;
+}
+
+
+
+
+
+
+

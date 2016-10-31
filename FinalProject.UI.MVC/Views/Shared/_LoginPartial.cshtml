@@ -1,9 +1,14 @@
 ﻿@using Microsoft.AspNet.Identity
+@using FinalProject.Data.EF
+@{TSTEntities db = new TSTEntities();
+    TSTEmployee e = db.TSTEmployees.Where(x => x.Email == User.Identity.Name).FirstOrDefault();
+}
 @if (Request.IsAuthenticated) {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" })) {
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
+            <li><img src="@Url.Content("~/Images/EmployeeImages/"+e.Image)" alt="picutre" style="height:50px; width:50px"/></li>
             <li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
@@ -13,7 +18,6 @@
 }
 else {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }

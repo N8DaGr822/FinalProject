@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9372165A-070B-4578-844D-522D9F609D86}</ProjectGuid>
+    <ProjectGuid>{0A5E42E6-31B1-41A9-AC50-5EA73AFC5568}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -182,7 +182,6 @@
     <Compile Include="Controllers\TSTDepartmentsController.cs" />
     <Compile Include="Controllers\TSTEmployeesController.cs" />
     <Compile Include="Controllers\TSTEmployeeStatusController.cs" />
-    <Compile Include="Controllers\TSTTechNotesController.cs" />
     <Compile Include="Controllers\TSTTicketPrioritiesController.cs" />
     <Compile Include="Controllers\TSTTicketsController.cs" />
     <Compile Include="Controllers\TSTTicketStatusController.cs" />
@@ -198,6 +197,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\css\bootstrap-rtl.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -206,27 +207,19 @@
     <Content Include="Content\css\sb-admin-rtl.css" />
     <Content Include="Content\css\sb-admin.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\font-awesome\css\font-awesome.css" />
-    <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
-    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\EmployeeImages\No-Image.svg.png" />
+    <Content Include="Images\EmployeeImages\background 2.jpg" />
+    <Content Include="Images\EmployeeImages\Nathan Lentz.JPG" />
+    <Content Include="Images\EmployeeImages\savannah kit.jpg" />
+    <Content Include="Images\EmployeeImages\Sibirian kit.jpg" />
+    <Content Include="Images\epic-fails-hob.jpg" />
+    <Content Include="Images\Epic-Fails-XD-biggerstaff-family-23292146-500-400.jpg" />
+    <Content Include="Images\EpicFail[2].jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\js\bootstrap.js" />
-    <Content Include="Scripts\js\bootstrap.min.js" />
-    <Content Include="Scripts\js\jquery.js" />
-    <Content Include="Scripts\js\plugins\flot\excanvas.min.js" />
-    <Content Include="Scripts\js\plugins\flot\flot-data.js" />
-    <Content Include="Scripts\js\plugins\flot\jquery.flot.js" />
-    <Content Include="Scripts\js\plugins\flot\jquery.flot.pie.js" />
-    <Content Include="Scripts\js\plugins\flot\jquery.flot.resize.js" />
-    <Content Include="Scripts\js\plugins\flot\jquery.flot.tooltip.min.js" />
-    <Content Include="Scripts\js\plugins\morris\morris-data.js" />
-    <Content Include="Scripts\js\plugins\morris\morris.js" />
-    <Content Include="Scripts\js\plugins\morris\morris.min.js" />
-    <Content Include="Scripts\js\plugins\morris\raphael.min.js" />
     <Content Include="_Archive\blank-page.html" />
     <Content Include="_Archive\bootstrap-elements.html" />
     <Content Include="_Archive\bootstrap-grid.html" />
@@ -259,37 +252,6 @@
     <Content Include="_Archive\js\plugins\morris\morris.min.js" />
     <Content Include="_Archive\js\plugins\morris\raphael.min.js" />
     <Content Include="_Archive\tables.html" />
-    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="fonts\font-awesome\less\bordered-pulled.less" />
-    <Content Include="fonts\font-awesome\less\core.less" />
-    <Content Include="fonts\font-awesome\less\fixed-width.less" />
-    <Content Include="fonts\font-awesome\less\font-awesome.less" />
-    <Content Include="fonts\font-awesome\less\icons.less" />
-    <Content Include="fonts\font-awesome\less\larger.less" />
-    <Content Include="fonts\font-awesome\less\list.less" />
-    <Content Include="fonts\font-awesome\less\mixins.less" />
-    <Content Include="fonts\font-awesome\less\path.less" />
-    <Content Include="fonts\font-awesome\less\rotated-flipped.less" />
-    <Content Include="fonts\font-awesome\less\spinning.less" />
-    <Content Include="fonts\font-awesome\less\stacked.less" />
-    <Content Include="fonts\font-awesome\less\variables.less" />
-    <Content Include="fonts\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="fonts\font-awesome\scss\_core.scss" />
-    <Content Include="fonts\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="fonts\font-awesome\scss\_icons.scss" />
-    <Content Include="fonts\font-awesome\scss\_larger.scss" />
-    <Content Include="fonts\font-awesome\scss\_list.scss" />
-    <Content Include="fonts\font-awesome\scss\_mixins.scss" />
-    <Content Include="fonts\font-awesome\scss\_path.scss" />
-    <Content Include="fonts\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="fonts\font-awesome\scss\_spinning.scss" />
-    <Content Include="fonts\font-awesome\scss\_stacked.scss" />
-    <Content Include="fonts\font-awesome\scss\_variables.scss" />
-    <Content Include="fonts\font-awesome\scss\font-awesome.scss" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -302,7 +264,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -347,6 +311,11 @@
     <Content Include="Views\RolesAdmin\Delete.cshtml" />
     <Content Include="Views\RolesAdmin\Create.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\TSTDepartments\Create.cshtml" />
+    <Content Include="Views\TSTDepartments\Delete.cshtml" />
+    <Content Include="Views\TSTDepartments\Details.cshtml" />
+    <Content Include="Views\TSTDepartments\Edit.cshtml" />
+    <Content Include="Views\TSTDepartments\Index.cshtml" />
     <Content Include="_Archive\LICENSE" />
     <Content Include="_Archive\README.md" />
     <Content Include="_Archive\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -383,11 +352,6 @@
     <Content Include="_Archive\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="_Archive\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="_Archive\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Views\TSTDepartments\Create.cshtml" />
-    <Content Include="Views\TSTDepartments\Delete.cshtml" />
-    <Content Include="Views\TSTDepartments\Details.cshtml" />
-    <Content Include="Views\TSTDepartments\Edit.cshtml" />
-    <Content Include="Views\TSTDepartments\Index.cshtml" />
     <Content Include="Views\TSTEmployees\Create.cshtml" />
     <Content Include="Views\TSTEmployees\Delete.cshtml" />
     <Content Include="Views\TSTEmployees\Details.cshtml" />
@@ -398,11 +362,6 @@
     <Content Include="Views\TSTEmployeeStatus\Details.cshtml" />
     <Content Include="Views\TSTEmployeeStatus\Edit.cshtml" />
     <Content Include="Views\TSTEmployeeStatus\Index.cshtml" />
-    <Content Include="Views\TSTTechNotes\Create.cshtml" />
-    <Content Include="Views\TSTTechNotes\Delete.cshtml" />
-    <Content Include="Views\TSTTechNotes\Details.cshtml" />
-    <Content Include="Views\TSTTechNotes\Edit.cshtml" />
-    <Content Include="Views\TSTTechNotes\Index.cshtml" />
     <Content Include="Views\TSTTickets\Create.cshtml" />
     <Content Include="Views\TSTTickets\Delete.cshtml" />
     <Content Include="Views\TSTTickets\Details.cshtml" />
@@ -418,6 +377,8 @@
     <Content Include="Views\TSTTicketStatus\Details.cshtml" />
     <Content Include="Views\TSTTicketStatus\Edit.cshtml" />
     <Content Include="Views\TSTTicketStatus\Index.cshtml" />
+    <Content Include="Views\TSTEmployees\InactiveEmployees.cshtml" />
+    <Content Include="Views\TSTDepartments\InactiveDepartments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -431,7 +392,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FinalProject.Data.EF\FinalProject.Data.EF.csproj">
-      <Project>{1d83e5b7-d44d-4a94-9837-c87fd33c986b}</Project>
+      <Project>{20ca5536-9b3d-4c2e-a037-40df9290c312}</Project>
       <Name>FinalProject.Data.EF</Name>
     </ProjectReference>
   </ItemGroup>
@@ -451,9 +412,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61826</DevelopmentServerPort>
+          <DevelopmentServerPort>58344</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61826/</IISUrl>
+          <IISUrl>http://localhost:58344/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -5,26 +5,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalProject.Data.EF// 1).MetaData
+namespace FinalProject.Data.EF//.MetaData
 {
-    public class TSTDepartmentsMetaData
+    public class TSTDepartmentMetaData
     {
         [Required(ErrorMessage = "*Name Is Required.")]
+        [Display(Name ="Department")]
         public string Name { get; set; }
 
         [UIHint("MultilineText")]
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         public string Description { get; set; }
 
-        [Display(Name = "Is Active")]
+        [Display(Name = "Active")]
         public bool IsActive { get; set; }
     }
     // 3)
-    [MetadataType(typeof(TSTDepartmentsMetaData))]
+    [MetadataType(typeof(TSTDepartmentMetaData))]
     // 2)
     public partial class TSTDepartment { }
 
-    public class TSTEmployeesMetaData
+    public class TSTEmployeeMetaData
     {
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "*First Name Is Required.")]
@@ -54,7 +55,7 @@ namespace FinalProject.Data.EF// 1).MetaData
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         public string Zip { get; set; }
 
-        [Required(ErrorMessage = "*Email Is Required.")]        
+        [Required(ErrorMessage = "*Email Is Required.")]
         public string Email { get; set; }
 
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
@@ -74,17 +75,25 @@ namespace FinalProject.Data.EF// 1).MetaData
 
         public string UserID { get; set; }
 
+        [Display(Name = "Department")]
         public int DeptID { get; set; }
 
         public int StatusID { get; set; }
 
     }
-    [MetadataType(typeof(TSTEmployeesMetaData))]
-    public partial class TSTEmployee { }
-    
-    public class TSTEmployeeStatusesMetaData
+    [MetadataType(typeof(TSTEmployeeMetaData))]
+    public partial class TSTEmployee {
+        public string FullName
+        {
+             get { return Fname + " " + Lname; }
+        }
+           
+    }
+
+    public class TSTEmployeeStatusMetaData
     {
         [Required(ErrorMessage = "*Name Is Required.")]
+        [Display(Name ="Status")]
         public string Name { get; set; }
 
         [UIHint("MultilineText")]
@@ -92,46 +101,61 @@ namespace FinalProject.Data.EF// 1).MetaData
         public string Description { get; set; }
 
     }
-    [MetadataType(typeof(TSTEmployeeStatusesMetaData))]
+    [MetadataType(typeof(TSTEmployeeStatusMetaData))]
     public partial class TSTEmployeeStatus { }
 
-    public partial class TSTTechNotesMetaData
-    {
-        [UIHint("MultilineText")]
-        [DisplayFormat(NullDisplayText = "[-N/A-]")]
-        public string Notes { get; set; }
+    //public partial class TSTTechNotesMetaData
+    //{
+    //    [UIHint("MultilineText")]
+    //    [DisplayFormat(NullDisplayText = "[-N/A-]")]
+    //    public string Notes { get; set; }
 
-        [Display(Name = "Time Created")]
-        [DisplayFormat(DataFormatString = "{0:d}")]
-        public System.DateTime TimeCreated { get; set; }
+    //    [Display(Name = "Time Created")]
+    //    [DisplayFormat(DataFormatString = "{0:d}")]
+    //    public System.DateTime TimeCreated { get; set; }
 
-    }
+    //}
 
-    [MetadataType(typeof(TSTTechNotesMetaData))]
-    public partial class TSTTechNote { }
+    //[MetadataType(typeof(TSTTechNotesMetaData))]
+    //public partial class TSTTechNote { }
 
-    public partial class TSTTicketsMetaData
+    public partial class TSTTicketMetaData
     {
         [DisplayFormat(DataFormatString = "{0:d}")]
         public System.DateTime CreatedDate { get; set; }
 
         [Display(Name = "Resolution Date")]
-        [DisplayFormat(NullDisplayText = "[-N/A-]",DataFormatString = "{0:d}")]
+        [DisplayFormat(NullDisplayText = "[-N/A-]", DataFormatString = "{0:d}")]
         public Nullable<System.DateTime> ResolutionDate { get; set; }
 
         [UIHint("MultilineText")]
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         public string Description { get; set; }
 
+        [Display(Name ="Submited By")]
+        public int SubmitedByID { get; set; }
+
+        [Display(Name = "Tech")]
+        public Nullable<int> TechID { get; set; }
+
+        [Display(Name = "Statues")]
+        public int StatusID { get; set; }
+
+        [Display(Name = "Priority")]
+        public int PriorityID { get; set; }
+
+
 
         public string Subject { get; set; }
     }
-    [MetadataType(typeof(TSTTicketsMetaData))]
+    [MetadataType(typeof(TSTTicketMetaData))]
     public partial class TSTTicket { }
 
-    public partial class TSTTicketPrioritysMetaData
+    public partial class TSTTicketPriorityMetaData
     {
         [Required(ErrorMessage = "*Name Is Required.")]
+        [Display(Name = "Priority")]
+
         public string Name { get; set; }
 
         [UIHint("MultilineText")]
@@ -139,11 +163,11 @@ namespace FinalProject.Data.EF// 1).MetaData
         public string Description { get; set; }
 
     }
-    [MetadataType(typeof(TSTTicketPrioritysMetaData))]
+    [MetadataType(typeof(TSTTicketPriorityMetaData))]
     public partial class TSTTicketPriority { }
 
 
-    public partial class TSTTicketStatusesMetaData
+    public partial class TSTTicketStatusMetaData
     {
         [Required(ErrorMessage = "*Name Is Required.")]
         public string Name { get; set; }
@@ -152,22 +176,8 @@ namespace FinalProject.Data.EF// 1).MetaData
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         public string Description { get; set; }
     }
-    [MetadataType(typeof(TSTTicketStatusesMetaData))]
+    [MetadataType(typeof(TSTTicketStatusMetaData))]
     public partial class TSTTicketStatus { }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

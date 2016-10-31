@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="text-align:center;">Details</h2>
 
 <div>
-    <h4>TSTEmployee</h4>
+    <h4 style="text-align:center;">@Html.DisplayFor(model => model.TSTDepartment.Name)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -127,7 +127,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            @*@Html.DisplayFor(model => model.Image)*@
+            <img src="~/Images/EmployeeImages/@Model.Image" alt="" style="height:100px; width:100px;" />
         </dd>
 
         <dt>
@@ -164,7 +165,11 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+<p style="text-align:center;">
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new {@class= "btn btn-danger"}) 
+    }
+
+    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-primary" })
 </p>

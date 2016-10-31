@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details.</h2>
+<h2 style="text-align:center;">Details</h2>
 
 <div>
-    <h4>Roles.</h4>
+    <h4 style="text-align:center;">Roles.</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -35,10 +35,10 @@
             </td>
         </tr>
     }
-</table>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+</table><br /><br />
+<p style="text-align:center;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-danger" })<br /><br />
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </p>
 
 

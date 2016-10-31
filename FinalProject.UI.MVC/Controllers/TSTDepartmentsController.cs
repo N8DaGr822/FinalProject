@@ -10,14 +10,25 @@ using FinalProject.Data.EF;
 
 namespace FinalProject.UI.MVC.Controllers
 {
+    [Authorize]
     public class TSTDepartmentsController : Controller
     {
         private TSTEntities db = new TSTEntities();
 
-        // GET: TSTDepartments
+        [Authorize]
+        // GET: TSTDepartments active
         public ActionResult Index()
         {
-            return View(db.TSTDepartments.ToList());
+            var tSTDepartments = db.TSTDepartments.Where(x => x.IsActive == true);
+            return View(tSTDepartments.ToList());
+        }
+
+        // GET: TSTDepartments inactive
+        public ActionResult InactiveDepartments()
+        {
+            var tSTDepartments = db.TSTDepartments.Where(x => x.IsActive == false);
+
+            return View(tSTDepartments.ToList());
         }
 
         // GET: TSTDepartments/Details/5
@@ -110,7 +121,16 @@ namespace FinalProject.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             TSTDepartment tSTDepartment = db.TSTDepartments.Find(id);
-            db.TSTDepartments.Remove(tSTDepartment);
+            //db.TSTDepartments.Remove(tSTDepartment);
+            //if (tSTDepartment.IsActive == true)
+            //{
+            //    tSTDepartment.IsActive = false;
+            //}
+            //else
+            //{
+            //    tSTDepartment.IsActive = false;
+            //}
+            tSTDepartment.IsActive = !tSTDepartment.IsActive;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

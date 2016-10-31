@@ -2,11 +2,139 @@
     ViewBag.Title = "About";
 }
 <hgroup>
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+    <h2 style="text-align:center;">@ViewBag.Title.</h2>
+
 </hgroup>
 <div class="row-fluid">
     <div class="span12">
-        <p>Use this area to provide additional information.</p>
+        <h2>Tech Support Tracker Requirements</h2>
+        <p>
+            This project has been designed to utilize the majority of skills that you have learned up to this point.  The core of this project is an ASP.NET MVC 5 website that utilizes EF to manage/persist trouble ticket data, and to track any employee and status changes for these tickets.
+        </p>
+        <p>
+            The minimum requirements for this project are as follows:
+        </p>
+        <h3>Manage Departments:</h3>
+        <p>
+            <ul>
+                <li>
+                    only available to admin users
+                </li>
+                <li>
+                    Index view should show all departments
+                </li>
+                <li>
+                    CRUD functionality (Soft Delete)
+                </li>
+                <li>
+                    Upon inserting or editing the department, users are taken to the index view with all active departments
+                </li>
+            </ul>
+        </p>
+        <h3>Manage Employees:</h3>
+        <p>
+            <ul>
+                <li>
+                    only available to admin users
+                </li>
+                <li>
+                    index view should be set to only active employees, but be filterable to inactive employees
+                </li>
+                <li>
+                    CRUD functionality (Soft Delete)
+                </li>
+                <li>
+                    Upon inserting or editing the employee they are taken to the index view with all active employees
+                </li>
+            </ul>
+        </p>
+        <h3>Support Tickets:</h3>
+        <p>
+            <ul>
+                <li>
+                    index view should be set to only “open” (pending & In Process) requests
+                </li>
+                <li>
+                    Anonymous users can only view master-detail read-only mode
+                </li>
+                <li>
+                    If logged in, can insert new request (but may not edit)
+                </li>
+                <li>
+                    Authenticated users should be able to filter between either Open (Pending or In Process) and Resolved Requests
+                </li>
+                <li>
+                    If logged in as an Administrator or Tech, users should be able to access edit functionality in detail view and toggle status between Resolved and In Process from master view
+                </li>
+                <li>
+                    Upon completing the new request (or clicking button to see Open requests) they are taken to the master view with all open requests
+                </li>
+                <li>
+                    CRUD functionality (Soft Delete)
+                </li>
+            </ul>
+
+        </p>
+        <h3>All NEW Support requests should:</h3>
+        <p>
+            <ul>
+                <li>
+                    Be in Pending Status automatically. (No user activity/selection)
+                </li>
+                <li>
+                    Have a null closed date
+                </li>
+                <li>
+                    Should NOT be able to see the Tech Notes field
+                </li>
+                <li>
+                    Allow for null tech id in the creation
+                </li>
+                <li>
+                    The only viewable fields for Authenticated NON ADMIN users should be the RequestingEmployee and Requestor Notes.
+                </li>
+            </ul>
+
+        </p>
+        <h3>Notes:</h3>
+        <p>
+            <ul>
+                <li>
+                    BASIC Requirements should be fulfilled BEFORE any additional functionality is added
+                </li>
+                <li>
+                    jQuery DatePicker controls should be used for any dates that are not automatically added
+                </li>
+                <li>
+                    All non-PK ID selections for Inserting and Updating should be done with DropDown lists
+                </li>
+                <li>
+                    Notes fields will need to be converted to Multi line text boxes
+                </li>
+                <li>
+                    All required fields should be validated
+                </li>
+                <li>
+                    Once you have base functionality your project should be backed up and not touched
+                </li>
+            </ul>
+
+        </p>
+        <p>
+            Example Status Records (know which constitute open/closed)
+            <ul>
+                <li>Pending</li>
+                <li>Assigned</li>
+                <li>InProcess</li>
+                <li>OnHold</li>
+                <li> Resolved</li>
+            </ul>
+
+
+
+
+
+
+        </p>
     </div>
 </div>

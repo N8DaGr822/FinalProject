@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FinalProject.Data.EF.TSTDepartment>
+
+@{
+    ViewBag.Title = "InactiveDepartments";
+}
+
+<h2 style="text-align:center;">Inactive Departments</h2>
+<p>@Html.ActionLink("Show Active Departments", "Index", "TSTDepartments", new { @class = "btn btn-primary" })</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" })
+                }
+
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-success" })
+
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

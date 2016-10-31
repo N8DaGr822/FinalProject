@@ -4,8 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="79a5a04ef53a4c3c8526bdf1faf2074f" Name="Diagram1">
-        <EntityTypeShape EntityType="TSTModel.sysdiagram" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+      <Diagram DiagramId="4aea9f2c97334bcf92b51d3008bfcd7d" Name="Diagram1">
+        <EntityTypeShape EntityType="TSTModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TSTModel.AspNetRole" Width="1.5" PointX="8.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TSTModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TSTModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TSTModel.AspNetUser" Width="1.5" PointX="11" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TSTModel.sysdiagram" Width="1.5" PointX="2.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TSTModel.TSTDepartment" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TSTModel.TSTEmployee" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="TSTModel.TSTEmployeeStatus" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
@@ -13,6 +18,8 @@
         <EntityTypeShape EntityType="TSTModel.TSTTicketPriority" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TSTModel.TSTTicket" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="TSTModel.TSTTicketStatus" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="TSTModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="TSTModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="TSTModel.FK_TSTEmployees_TSTDepartments" ManuallyRouted="false" />
         <AssociationConnector Association="TSTModel.FK_TSTEmployees_TSTEmployeeStatuses" ManuallyRouted="false" />
         <AssociationConnector Association="TSTModel.FK_TSTTechNotes_TSTEmployees" ManuallyRouted="false" />
@@ -21,6 +28,7 @@
         <AssociationConnector Association="TSTModel.FK_TSTTechNotes_TSTTickets" ManuallyRouted="false" />
         <AssociationConnector Association="TSTModel.FK_TSTTickets_TSTTicketPriorities" ManuallyRouted="false" />
         <AssociationConnector Association="TSTModel.FK_TSTTickets_TSTTicketStatuses" ManuallyRouted="false" />
+        <AssociationConnector Association="TSTModel.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
